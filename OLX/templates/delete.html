@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{%load static%}
+{% block title%}
+Movie page
+{% endblock %}
+{% block content %}
+<h1 class="text-center">Delete Movie</h1>
+<form method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    <table>
+{{form.as_table}}
+</table>
+    <p>Are you sure you want to delete???..</p>
+    <input type="submit">
+    </form>
+
+{%endblock%}

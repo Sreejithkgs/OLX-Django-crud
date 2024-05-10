@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="mt-2">
+    <div class="container">
+        <div class="row">
+
+           {% for i in b %}
+            <div class="col-md-3">
+             <div class="card" style="width: 17rem;height:500px;border-radius:12px;">
+           <img src="{{i.product_image.url}}" class="card-img-top" style="height:350px;width:100%;border-radius:12px;">
+           <div class="card-body">
+          <h5 class="card-title">{{i.product_name}}</h5>
+          <p>Price : ₹{{i.price}}</p>
+         <p class="card-text">{{i.year_reg}}</p>
+          <p>Posted time : {{i.posted_time }}</p>
+          <a href="{% url 'olxapp:details' i.id %}" class="btn btn-primary">More Details</a>
+         </div>
+         </div>
+         </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{%endblock%}

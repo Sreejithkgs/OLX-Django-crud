@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<br>
+<h1 class="text-center">Add product</h1>
+
+<form method="POST" enctype="multipart/form-data" >
+    {% csrf_token %}
+  <div class="mb-3">
+    <label class="form-label">Product Name</label>
+    <input type="text" class="form-control" name="a">
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input type="text" class="form-control" name="b">
+  </div>
+   <div class="mb-3">
+    <label  class="form-label">Year Of Registration</label>
+    <input type="text" class="form-control" name="c">
+  </div>
+     <div class="mb-3">
+    <label  class="form-label">Product Image</label>
+    <input type="file" class="form-control" name="d">
+  </div>
+   <div class="mb-3">
+    <label  class="form-label">Product Description</label>
+    <input type="text" class="form-control" name="e">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
